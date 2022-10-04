@@ -42,7 +42,7 @@ export default function (props) {
                     style={styles.input}
                     onChangeText={onChangeNumber}
                     value={number}
-                    placeholder="e-mail"
+                    placeholder="password"
                     keyboardType="numeric"
                 />
                 <View style={styles.button1} ><Button title="back" onPress={() => props.navigation.pop()} /> </View>
