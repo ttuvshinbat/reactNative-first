@@ -5,9 +5,7 @@ import { StyleSheet, View, Text, Image, SafeAreaView, TextInput, Button } from "
 export default function (props) {
     const [text, onChangeText] = useState("");
     const [number, onChangeNumber] = useState(null);
-    console.log(text)
-    console.log(number)
-    console.log(props.navigation.pop)
+    
 return (
         <View>
             <Image style={styles.homepic} source={require("../../assets/img/amazonPic.png")} />
