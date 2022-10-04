@@ -7,14 +7,14 @@ export default function (props) {
             marginVertical: 10,
         } ,
         pic: {
-     width:"100",
-     heigth:"50"
+     width:"100%",
+    height: "100%",
         }
     })
     return (
         <View>
           <Text>Amazon</Text>
-            <Image style={styles.pic} source={require("../../assets/img/amazonPic.png")}/> 
+            <Image style={styles.pic} source={require("../../assets/img/homePic.jpeg")}/> 
             <View style={styles.button1} ><Button onPress={() => { props.navigation.navigate("Login") }} title="login" /></View>
             <View><Button onPress={() => { props.navigation.navigate("Register") }} title="register" /></View>
             
