@@ -1,16 +1,19 @@
 import React, { useState } from "react"
-
-import { StyleSheet, View, Text, Image, SafeAreaView, TextInput, Button } from "react-native"
+import MyButton from "./component/MyButton"
+import { StyleSheet, View, Text, Image, SafeAreaView, TextInput, Alert } from "react-native"
 // import amazonpic from "../../assets/img/amazonpic.png"
 export default function (props) {
     const [text, onChangeText] = useState("");
-    const [number, onChangeNumber] = useState(null);
-    
-return (
-        <View>
-            <Image style={styles.homepic} source={require("../../assets/img/amazonPic.png")} />
-            <SafeAreaView>
 
+    const [number, onChangeNumber] = useState("");
+    const loginHandler = () => {
+        console.log("wait")
+    }
+
+    return (
+        <View>
+            {/* <SafeAreaView>
+                <Image style={styles.homepic} source={require("../../assets/img/amazonPic.png")} />
                 <Text style={styles.text} >Username</Text>
                 <TextInput
                     style={styles.input}
@@ -26,14 +29,16 @@ return (
                     placeholder="password"
                     keyboardType="numeric"
                 />
-                <View style={styles.button1} ><Button title="back" onPress={() => props.navigation.pop()} /> </View>
-                <View style={styles.button1} ><Button title="log in" onPress={() => props.navigation.pop()} /> </View>
+                <MyButton title="back" onPress={() => props.navigation.pop()} />
+                <MyButton title="login" onPress={loginHandler} />
 
 
-            </SafeAreaView>
+
+            </SafeAreaView> */}
+            <Text> login js</Text>
         </View>
     )
-    
+
 
 }
 const styles = StyleSheet.create({
@@ -42,19 +47,20 @@ const styles = StyleSheet.create({
         margin: 12,
         marginVertical: 10,
         padding: 10,
-     borderColor:"gray",
-        borderWidth:5,
-       },
+        borderColor: "gray",
+        borderWidth: 5,
+    },
     homepic: {
         width: "100%",
-        height: "50%", },
-    button1: {
-   
-     marginVertical: 10,
-     margin:12,
+        height: "50%",
     },
-    text:{
-   marginLeft:11,
+    button1: {
+
+        marginVertical: 10,
+        margin: 12,
+    },
+    text: {
+        marginLeft: 11,
     }
 
 })
