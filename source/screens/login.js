@@ -1,18 +1,20 @@
 import React, { useState } from "react"
 import MyButton from "./component/MyButton"
 import { StyleSheet, View, Text, Image, SafeAreaView, TextInput, Alert } from "react-native"
+import render from "react-native-web/dist/cjs/exports/render";
 // import amazonpic from "../../assets/img/amazonpic.png"
 export default function (props) {
-    const [text, onChangeText] = useState("");
+    const [text, onChangeText] = useState(false);
 
-    const [number, onChangeNumber] = useState("");
+    const [number, onChangeNumber] = useState(false);
     const loginHandler = () => {
         console.log("wait")
     }
 
     return (
         <View>
-            {/* <SafeAreaView>
+
+            <SafeAreaView>
                 <Image style={styles.homepic} source={require("../../assets/img/amazonPic.png")} />
                 <Text style={styles.text} >Username</Text>
                 <TextInput
@@ -29,13 +31,15 @@ export default function (props) {
                     placeholder="password"
                     keyboardType="numeric"
                 />
+                {/* mybutton  componentiig duudhaar error zaagad baina
+                 View iin 2 tald space avsan baigaa esehiig sain shalgah heregtei ym baina */}
                 <MyButton title="back" onPress={() => props.navigation.pop()} />
                 <MyButton title="login" onPress={loginHandler} />
 
 
 
-            </SafeAreaView> */}
-            <Text> login js</Text>
+            </SafeAreaView>
+
         </View>
     )
 

@@ -9,7 +9,8 @@ export default function (props) {
 
     return (
         <View>
-            {/* <SafeAreaView>
+            <Text>pisad</Text>
+            <SafeAreaView>
                 <Image style={styles.homepic} source={require("../../assets/img/amazonPic.png")} />
                 <Text style={styles.text} >First name</Text>
                 <TextInput
@@ -40,10 +41,10 @@ export default function (props) {
                     placeholder="password"
                     keyboardType="numeric"
                 />
-                <View style={styles.button1} ><Button title="back" onPress={() => props.navigation.pop()} /> </View>
-                <View style={styles.button1} ><Button title="register" onPress={() => props.navigation.pop()} /> </View>
-            </SafeAreaView> */}
-            <Text>pisad</Text>
+                <View style={styles.button1} ><Button title="back" onPress={() => props.navigation.pop()} /></View>
+                <View style={styles.button1} ><Button title="register" onPress={() => props.navigation.pop()} /></View>
+            </SafeAreaView>
+
         </View>
     )
 

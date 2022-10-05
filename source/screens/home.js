@@ -14,6 +14,7 @@ export default function (props) {
     return (
         <View>
             <Text>AmazonApp aa</Text>
+
             <Image style={styles.pic} source={require("../../assets/img/homePic.jpeg")} />
             <View style={styles.button1} ><Button onPress={() => { props.navigation.navigate("Login") }} title="login" /></View>
             <View><Button onPress={() => { props.navigation.navigate("Register") }} title="register" /></View>
