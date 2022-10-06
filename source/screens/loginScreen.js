@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import MyButton from "./component/MyButton"
 import MyInput from "./component/MyInput";
+import LoginCmp from "./component/LoginCmp";
 import { StyleSheet, View, Text, Image, SafeAreaView, TextInput, Alert } from "react-native"
 // import amazonpic from "../../assets/img/amazonpic.png"
 export default function (props) {
@@ -13,13 +14,11 @@ export default function (props) {
         <View>
             <SafeAreaView>
                 <Image style={styles.homepic} source={require("../../assets/img/amazonPic.png")} />
-                <MyInput placeholder="name" onChangeText={onChangeText}
+                {/* <MyInput placeholder="name" onChangeText={onChangeText}
                     value={text} text1="Username" />
-                <MyInput placeholder="log in" onChangeText={onChangeNumber} value={number} text1="Username" />
-                {/* mybutton  componentiig duudhaar error zaagad baina
-                 View iin 2 tald space avsan baigaa esehiig sain shalgah heregtei ym baina */}
-                <MyButton title="back" onPress={() => props.navigation.pop()} />
-                <MyButton title="login" onPress={loginHandler} />
+                <MyInput placeholder="log in" onChangeText={onChangeNumber} value={number} text1="Username" /> */}
+<LoginCmp/>
+
             </SafeAreaView>
         </View>
     )
