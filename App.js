@@ -5,6 +5,7 @@ import LoginScreen from "./source/screens/loginScreen"
 import Register from './source/screens/registerScreen';
 import FlexboxScreen from './source/screens/flexboxScreen';
 import FlatlistScreen from './source/screens/FlatlistScreen';
+import CustomListScreen from './source/screens/CustomListScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -19,7 +20,8 @@ export default function App() {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Flexbox" component={FlexboxScreen} />
         <Stack.Screen name="list" component={FlatlistScreen} />
-        </Stack.Navigator>
+        <Stack.Screen name="Customlist" component={CustomListScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }

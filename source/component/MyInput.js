@@ -1,19 +1,14 @@
 import React from "react";
 import { StyleSheet, TextInput, View, Text } from "react-native"
 export default function (props) {
-    console.log(props)
-    return (
-        <View><Text style={styles.textStyle} > {props.text1}</Text>
-            <TextInput
-                autoCapitalize="none"
-                autoCorrect={false}
-                placeholderTextColor="gray"
-                style={styles.input}
-                {...props}
 
-            />
-        </View>
-
+    return (<TextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        placeholderTextColor="gray"
+        {...props}
+        style={[styles.input, props.style,]}
+    />
 
     )
 }
@@ -28,8 +23,5 @@ const styles = StyleSheet.create({
     },
     textStyle: {
         margin: 10
-
     }
-
-
 })

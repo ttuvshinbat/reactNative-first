@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { StyleSheet, View, Text, Image, SafeAreaView, Button } from "react-native"
-import MyInput from "./component/MyInput";
-import MyTextArea from "./component/MyTextArea";
+import MyInput from "../component/MyInput";
+import MyTextArea from "../component/MyTextArea";
 export default function (props) {
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -12,14 +12,18 @@ export default function (props) {
             <Text>register</Text>
             <SafeAreaView>
                 <Image style={styles.homepic} source={require("../../assets/img/amazonPic.png")} />
+                <Text style={styles.textStyle}>First name</Text>
                 <MyInput placeholder="First name" onChangeText={setFirstname}
-                    value={firstname} text1="First nane" />
+                    value={firstname} />
+                <Text style={styles.textStyle}>Last name</Text>
                 <MyInput placeholder="Last name" onChangeText={setLastname}
-                    value={lastname} text1="Last nane" />
+                    value={lastname} />
+                <Text style={styles.textStyle}>E-mail</Text>
                 <MyInput placeholder="E mail" onChangeText={setEmail}
-                    value={email} text1="E-mail" />
+                    value={email} />
+                <Text style={styles.textStyle}>Password</Text>
                 <MyInput secureTextEntry={true} placeholder="password" onChangeText={onChangeNumber}
-                    value={number} text1="Password"
+                    value={number}
                 />
                 <MyTextArea placeholder="my textArea" />
                 <View style={styles.button1} ><Button title="back" onPress={() => props.navigation.pop()} /></View>
@@ -37,4 +41,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "30%",
     },
+    textStyle: {
+        margin: 10
+    }
 })

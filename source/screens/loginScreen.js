@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import MyButton from "./component/MyButton"
-import MyInput from "./component/MyInput";
-import LoginCmp from "./component/LoginCmp";
+import MyButton from "../component/MyButton"
+import MyInput from "../component/MyInput";
+import LoginCmp from "../component/LoginCmp";
 import { StyleSheet, View, Text, Image, SafeAreaView, TextInput, Alert } from "react-native"
 // import amazonpic from "../../assets/img/amazonpic.png"
 export default function (props) {
@@ -17,7 +17,7 @@ export default function (props) {
                 {/* <MyInput placeholder="name" onChangeText={onChangeText}
                     value={text} text1="Username" />
                 <MyInput placeholder="log in" onChangeText={onChangeNumber} value={number} text1="Username" /> */}
-<LoginCmp/>
+                <LoginCmp />
 
             </SafeAreaView>
         </View>
