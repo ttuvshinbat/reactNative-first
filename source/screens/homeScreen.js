@@ -15,6 +15,7 @@ const Home = (props) => {
             <MyButton title='Flex box' onPress={() => props.navigation.navigate("Flexbox")} />
             <MyButton title="Flat list" onPress={() => props.navigation.navigate("list")} />
             <MyButton title="Custom list" onPress={() => props.navigation.navigate("Customlist")} />
+            <MyButton title="Position" onPress={() => props.navigation.navigate("Position")} />
         </View>
     )
 

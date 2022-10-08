@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, ScrollView, } from 'react-native'
+import { StyleSheet, Text, View, ScrollView,TouchableOpacity, } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import MyInput from "../component/MyInput"
 import MyButton from "../component/MyButton"
@@ -13,9 +13,12 @@ const CustomListScreen = () => {
     const [todo, setTodo] = useState([{}])
     const [additem, setAdditem] = useState("")
     var lastID = todo.length + 1;
-    console.log(todo)
+   
     const addNewItem = () => {
         setTodo(todo => [...todo, { id: lastID, title: additem, userId: 1 }])
+    }
+    const clickDelete= (id)=> {
+        setTodo(todo => todo.filter(data=> data.id !== id))
     }
     console.log(additem)
     useEffect(() => {
@@ -25,7 +28,7 @@ const CustomListScreen = () => {
     }, [])
     return (
         <View >
-            <Text> hello sda min</Text>
+            <Text style={styles.myList}> Сайн байна уу энэ код дотор comment  оор  Customlist, FlatList  ийн ялгааг тайлбарлав.</Text>
             <View style={styles.addContainer}>
                 <MyInput style={styles.addInput} onChangeText={text => setAdditem(text)} />
                 <MyButton style={styles.button2} title="increment" onPress={addNewItem} />
@@ -36,9 +39,12 @@ const CustomListScreen = () => {
                     var randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
                     return (
                         <View key={data.id} style={{ ...styles.item, backgroundColor: randomColor }}  >
+                            <TouchableOpacity onPress={()=> clickDelete(data.id)}>
                             <Text>{data.id} </Text>
                             <Text>{data.title}</Text>
+                   
                             <Text>{data.body}</Text>
+                            </TouchableOpacity>
                         </View>
                     )
                 })}
@@ -58,7 +64,9 @@ const styles = StyleSheet.create({
 
     },
     myList: {
-        marginHorizontal: 20
+        marginHorizontal: 20,
+        marginVertical:10,
+        fontSize:16
     },
 
     item: {

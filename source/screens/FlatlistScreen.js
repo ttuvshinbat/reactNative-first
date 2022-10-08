@@ -2,18 +2,27 @@ import { StyleSheet, Text, View, FlatList, SafeAreaView, StatusBar, TouchableOpa
 import React, { useState, useEffect } from 'react'
 import MyInput from "../component/MyInput"
 import MyButton from "../component/MyButton"
+import ModalComfirmDelete from '../component/ModalComfirmDelete'
 const FlatlistScreen = (props) => {
     const [todo, setTodo] = useState([{}])
     const [additem, setAdditem] = useState("")
+const [showModal, setShowModal] = useState(false)
+const [idDelete,setIdDelete] = useState(0)
     const todos = todo.slice(0, 10)
     const newID = Math.floor(Math.random() * 1000000)
     var randomColor = "#000000".replace(/0/g, function () { return (~~(Math.random() * 16)).toString(16); });
     var lastID = todo.length + 1;
-    console.log(randomColor)
-
     const addNewItem = () => {
         setTodo(todo => [...todo, { title: additem, id: lastID, completed: 2 }])
-
+}
+    const clickDelete= (id)=> {
+        setIdDelete(id)
+        setShowModal(true)
+        
+    }
+    const deleteItem =() =>{
+setTodo(todo => todo.filter(data=> data.id !==idDelete))
+setShowModal(false)
     }
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/todos/')
@@ -26,8 +35,9 @@ const FlatlistScreen = (props) => {
     const Item = ({ title, completed, id }) => (
 
         <View style={styles.item} >
-            <TouchableOpacity onPress={() => Alert.alert(`hello : ${title}`)}>
-                <Text style={styles.title}>my id-{id}</Text></TouchableOpacity>
+            <ModalComfirmDelete visible={showModal} id={idDelete} deleteItem={deleteItem} cancel={()=> setShowModal(false)} />
+            <TouchableOpacity onPress={()=> clickDelete(id)}>
+                <Text style={styles.title}>clicked delete-{id}</Text></TouchableOpacity>
 
             <Text style={styles.title}>{title}</Text>
 
