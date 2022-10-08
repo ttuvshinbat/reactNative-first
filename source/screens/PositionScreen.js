@@ -44,7 +44,7 @@ child3:{
     height:70,
     width:70,
     borderColor:"orange",
-    borderWidth:2,
+    borderWidth:3,
 },
 
 })
