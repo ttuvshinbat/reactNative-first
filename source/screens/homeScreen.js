@@ -16,6 +16,7 @@ const Home = (props) => {
             <MyButton title="Flat list" onPress={() => props.navigation.navigate("list")} />
             <MyButton title="Custom list" onPress={() => props.navigation.navigate("Customlist")} />
             <MyButton title="Position" onPress={() => props.navigation.navigate("Position")} />
+            <MyButton title="Course" onPress={() => props.navigation.navigate("Course")} />
         </View>
     )
 
@@ -27,6 +28,6 @@ const styles = StyleSheet.create({
     },
     pic: {
         width: "100%",
-        height: "50%",
+        height: "40%",
     }
 })

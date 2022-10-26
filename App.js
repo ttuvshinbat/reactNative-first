@@ -7,6 +7,7 @@ import FlexboxScreen from './source/screens/flexboxScreen';
 import FlatlistScreen from './source/screens/FlatlistScreen';
 import CustomListScreen from './source/screens/CustomListScreen';
 import PositionScreen from './source/screens/PositionScreen';
+import SurgaltScreen from './source/screens/SurgaltScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -23,6 +24,7 @@ export default function App() {
         <Stack.Screen name="list" component={FlatlistScreen} />
         <Stack.Screen name="Customlist" component={CustomListScreen} />
         <Stack.Screen name="Position" component={PositionScreen} />
+        <Stack.Screen name="Course" component={SurgaltScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
